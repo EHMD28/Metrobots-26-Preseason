@@ -3,33 +3,7 @@
  */
 package testing;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import testing.Foo.BinaryOperation;
-
 public class App {
     public static void main(String[] args) {
-        double[] a1 = new double[] { 0.1, 0.2, 0.3, 0.4, 0.5 };
-        double[] a2 = new double[] { 1.0, 2.0, 3.0, 4.0, 5.0 };
-        Double[] sum = combineListsUsingOp((a, b) -> a + b, a1, a2);
-        Double[] product = combineListsUsingOp((a, b) -> a * b, a1, a2);
-        // [1.1, 2.2, 3.3, 4.4, 5.5]
-        System.out.println(Arrays.toString(sum));
-        // [0.1, 0.4, 0.8999999999999999, 1.6, 2.5]
-        System.out.println(Arrays.toString(product));
-    }
-
-    static Double[] combineListsUsingOp(BinaryOperation operator, double[] arr1, double[] arr2) {
-        ArrayList<Double> nums = new ArrayList<>();
-        if (arr1.length == arr2.length) {
-            for (int i = 0; i < arr1.length; i++) {
-                Double newElement = operator.applyOp(arr1[i], arr2[i]);
-                nums.add(newElement);
-            }
-        } else {
-            throw new IllegalArgumentException("Arrays must be of the same length");
-        }
-        return nums.toArray(new Double[0]);
     }
 }
